@@ -5,6 +5,8 @@
  */
 package clases;
 
+import java.util.Objects;
+
 /**
  *
  * @author oscar
@@ -57,6 +59,22 @@ public class Ciudad {
 
     public void setNombreComunidad(String nombreComunidad) {
         this.nombreComunidad = nombreComunidad;
+    }
+
+    @Override
+    public String toString() {
+        return this.nombreCiudad; //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
+    @Override
+    public boolean equals(Object obj) {
+        return this.nombreCiudad.equals(obj.toString()); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nombreCiudad); //To change body of generated methods, choose Tools | Templates.
     }
     
     

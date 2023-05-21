@@ -42,7 +42,7 @@ public class Conexion {
     }
 
     public void insertarProducto(Producto producto) throws SQLException {
-        String sql = "INSERT INTO productos (nombreproducto, lineaproducto, descripcion, cantidadEnStock, pvp, proveedor, eliminado) "
+        String sql = "INSERT INTO productos (nombreproducto, lineaproducto, descripcion, cantidadEnStock, pvp, proveedor) "
                 + "VALUES (?, ?, ?, ?, ?, ?, ?)";
 
         try ( PreparedStatement statement = connection.prepareStatement(sql)) {
@@ -52,14 +52,13 @@ public class Conexion {
             statement.setInt(4, producto.getStock());
             statement.setDouble(5, producto.getPvp());
             statement.setInt(6, producto.getProveedor().getIdproveedor());
-            statement.setBoolean(7, producto.isEliminado());
 
             statement.executeUpdate();
         }
     }
 
     public void eliminarProducto(int idProducto) throws SQLException {
-        String sql = "UPDATE productos SET eliminado = 1 WHERE idproductos = ?";
+        String sql = "UPDATE productos SET eliminado = 1 WHERE idproducto = ?";
 
         try ( PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setInt(1, idProducto);
@@ -67,20 +66,81 @@ public class Conexion {
             statement.executeUpdate();
         }
     }
+    
+    public void eliminarProveedor(int idProveedor) throws SQLException {
+        String sql = "DELETE FROM proveedores WHERE idproveedor = ?";
+
+        try ( PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setInt(1, idProveedor);
+
+            statement.executeUpdate();
+        }
+    }
+    public void eliminarLineaProducto(String linea) throws SQLException {
+        String sql = "DELETE FROM lineasproducto WHERE lineaproducto = ?";
+
+        try ( PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setString(1, linea);
+
+            statement.executeUpdate();
+        }
+    }
+    public void eliminarCliente(int idCliente) throws SQLException {
+        String sql = "DELETE FROM clientes WHERE idcliente = ?";
+
+        try ( PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setInt(1, idCliente);
+
+            statement.executeUpdate();
+        }
+    }
+    public void eliminarEmpleado(int idEmpleado) throws SQLException {
+        String sql = "DELETE FROM empleados WHERE idempleados = ?";
+
+        try ( PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setInt(1, idEmpleado);
+
+            statement.executeUpdate();
+        }
+    }
+    public void eliminarPedido(int idPedido) throws SQLException {
+        String sql = "DELETE FROM pedidos WHERE idpedido = ?";
+
+        try ( PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setInt(1, idPedido);
+
+            statement.executeUpdate();
+        }
+    }
 
     public void actualizarProducto(Producto producto) throws SQLException {
         String sql = "UPDATE productos SET nombreproducto = ?, lineaproducto = ?, descripcion = ?, "
-                + "cantidadEnStock = ?, pvp = ?, proveedor = ?, eliminado = ? WHERE idproductos = ?";
+                + "cantidadEnStock = ?, pvp = ?, proveedor = ?, eliminado = ? WHERE idproducto = ?";
 
         try ( PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, producto.getNombre());
-            statement.setString(2, producto.getLineaProducto().toString());
+            statement.setString(2, producto.getLineaProducto().getLinea());
             statement.setString(3, producto.getDescripcion());
             statement.setInt(4, producto.getStock());
             statement.setDouble(5, producto.getPvp());
             statement.setInt(6, producto.getProveedor().getIdproveedor());
             statement.setBoolean(7, producto.isEliminado());
             statement.setInt(8, producto.getIdProducto());
+
+            statement.executeUpdate();
+        }
+    }
+    
+    public void actualizarProveedor(Proveedor proveedor) throws SQLException {
+        String sql = "UPDATE proveedores SET nombreEmpresa = ?, nombreContacto = ?, ciudad = ?, telefono = ?, paginaweb = ? WHERE idproveedor = ?";;
+
+        try ( PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setString(1, proveedor.getNombreEmpresa());
+            statement.setString(2, proveedor.getNombreContacto());
+            statement.setInt(3, proveedor.getCiudad().getIdciudad());
+            statement.setString(4, proveedor.getTelefono());
+            statement.setString(5, proveedor.getPaginaweb());
+            statement.setInt(6, proveedor.getIdproveedor());
 
             statement.executeUpdate();
         }
@@ -283,7 +343,7 @@ public class Conexion {
             while (resultSet.next()) {
                 Ciudad ciudad = new Ciudad();
                 ciudad.setIdciudad(resultSet.getInt("idciudad"));
-                ciudad.setIdciudad(resultSet.getInt("idCCAA"));
+                ciudad.setIdccaa(resultSet.getInt("idCCAA"));
                 ciudad.setNombreCiudad(resultSet.getString("nombreCiudad"));
                 ciudad.setNombreComunidad(resultSet.getString("nombreComunidad"));
                 ciudades.add(ciudad);
