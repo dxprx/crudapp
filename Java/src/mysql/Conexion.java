@@ -66,7 +66,7 @@ public class Conexion {
             statement.executeUpdate();
         }
     }
-    
+
     public void eliminarProveedor(int idProveedor) throws SQLException {
         String sql = "DELETE FROM proveedores WHERE idproveedor = ?";
 
@@ -76,6 +76,7 @@ public class Conexion {
             statement.executeUpdate();
         }
     }
+
     public void eliminarLineaProducto(String linea) throws SQLException {
         String sql = "DELETE FROM lineasproducto WHERE lineaproducto = ?";
 
@@ -85,6 +86,7 @@ public class Conexion {
             statement.executeUpdate();
         }
     }
+
     public void eliminarCliente(int idCliente) throws SQLException {
         String sql = "DELETE FROM clientes WHERE idcliente = ?";
 
@@ -94,6 +96,7 @@ public class Conexion {
             statement.executeUpdate();
         }
     }
+
     public void eliminarEmpleado(int idEmpleado) throws SQLException {
         String sql = "DELETE FROM empleados WHERE idempleados = ?";
 
@@ -103,6 +106,7 @@ public class Conexion {
             statement.executeUpdate();
         }
     }
+
     public void eliminarPedido(int idPedido) throws SQLException {
         String sql = "DELETE FROM pedidos WHERE idpedido = ?";
 
@@ -130,7 +134,7 @@ public class Conexion {
             statement.executeUpdate();
         }
     }
-    
+
     public void actualizarProveedor(Proveedor proveedor) throws SQLException {
         String sql = "UPDATE proveedores SET nombreEmpresa = ?, nombreContacto = ?, ciudad = ?, telefono = ?, paginaweb = ? WHERE idproveedor = ?";;
 
@@ -146,8 +150,36 @@ public class Conexion {
         }
     }
 
+    public void actualizarLineasProducto(LineaProducto linea, String id) throws SQLException {
+        String sql = "UPDATE lineasproducto SET lineaproducto = ?, descripcion = ? WHERE lineaproducto = ?";;
+
+        try ( PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setString(1, linea.getLinea());
+            statement.setString(2, linea.getDescripcion());
+            statement.setString(3, id);
+
+            statement.executeUpdate();
+        }
+    }
+
+    public void actualizarCliente(Cliente cliente) throws SQLException {
+        String sql = "UPDATE clientes SET nombre = ?, telefono = ?, direccion = ?, ciudad = ?, codigoPostal = ?, email = ? WHERE idcliente = ?";;
+
+        try ( PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setString(1, cliente.getNombre());
+            statement.setString(2, cliente.getTelefono());
+            statement.setString(3, cliente.getDireccion());
+            statement.setInt(4, cliente.getCiudad().getIdciudad());
+            statement.setString(5, cliente.getCodigoPostal());
+            statement.setString(6, cliente.getEmail());
+            statement.setInt(7, cliente.getIdClientes());
+
+            statement.executeUpdate();
+        }
+    }
+
     public List<Producto> seleccionarProductos() throws SQLException {
-        String sql = "SELECT * FROM productos INNER JOIN lineasproducto using(lineaproducto) INNER JOIN proveedores ON productos.proveedor = proveedores.idproveedor INNER JOIN ciudades_ccaa ON proveedores.ciudad = ciudades_ccaa.idciudad";
+        String sql = "SELECT * FROM productos LEFT JOIN lineasproducto using(lineaproducto) LEFT JOIN proveedores ON productos.proveedor = proveedores.idproveedor LEFT JOIN ciudades_ccaa ON proveedores.ciudad = ciudades_ccaa.idciudad";
 
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery(sql);
@@ -158,11 +190,19 @@ public class Conexion {
                 Producto producto = new Producto();
                 producto.setIdProducto(resultSet.getInt("idproducto"));
                 producto.setNombre(resultSet.getString("nombreproducto"));
+
                 producto.setLineaProducto(new LineaProducto(resultSet.getString("lineaproducto"), resultSet.getString("lineasproducto.descripcion")));
+                if (resultSet.wasNull()) {
+                    producto.setLineaProducto(new LineaProducto(" ", " "));
+                }
+
                 producto.setDescripcion(resultSet.getString("descripcion"));
                 producto.setStock(resultSet.getInt("cantidadEnStock"));
                 producto.setPvp(resultSet.getFloat("pvp"));
                 producto.setProveedor(new Proveedor(resultSet.getInt("proveedores.idproveedor"), resultSet.getString("proveedores.nombreEmpresa"), resultSet.getString("proveedores.nombreContacto"), new Ciudad(resultSet.getInt("idciudad"), resultSet.getInt("idCCAA"), resultSet.getString("nombreCiudad"), resultSet.getString("nombreComunidad")), resultSet.getString("proveedores.telefono"), resultSet.getString("proveedores.paginaweb")));
+                if (resultSet.wasNull()) {
+                    producto.setProveedor(new Proveedor(-1, " ", " ", new Ciudad(-1, -1, " ", " "), " ", " "));
+                }
                 producto.setEliminado(resultSet.getBoolean("eliminado"));
                 productos.add(producto);
             }
