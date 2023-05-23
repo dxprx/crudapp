@@ -18,8 +18,8 @@ import javax.swing.table.DefaultTableModel;
 public class Conexion {
 
     private final String db = "jdbc:mysql://localhost:3306/crud_app";
-    private final String db_user = "root";
-    private final String db_password = "root";
+    private final String db_user = "ogp";
+    private final String db_password = "ogp";
     private Connection connection;
     private static Conexion instance = new Conexion();
 
@@ -45,7 +45,7 @@ public class Conexion {
         String sql = "INSERT INTO productos (nombreproducto, lineaproducto, descripcion, cantidadEnStock, pvp, proveedor) "
                 + "VALUES (?, ?, ?, ?, ?, ?, ?)";
 
-        try ( PreparedStatement statement = connection.prepareStatement(sql)) {
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, producto.getNombre());
             statement.setString(2, producto.getLineaProducto().toString());
             statement.setString(3, producto.getDescripcion());
@@ -60,7 +60,7 @@ public class Conexion {
     public void eliminarProducto(int idProducto) throws SQLException {
         String sql = "UPDATE productos SET eliminado = 1 WHERE idproducto = ?";
 
-        try ( PreparedStatement statement = connection.prepareStatement(sql)) {
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setInt(1, idProducto);
 
             statement.executeUpdate();
@@ -70,7 +70,7 @@ public class Conexion {
     public void eliminarProveedor(int idProveedor) throws SQLException {
         String sql = "DELETE FROM proveedores WHERE idproveedor = ?";
 
-        try ( PreparedStatement statement = connection.prepareStatement(sql)) {
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setInt(1, idProveedor);
 
             statement.executeUpdate();
@@ -80,7 +80,7 @@ public class Conexion {
     public void eliminarLineaProducto(String linea) throws SQLException {
         String sql = "DELETE FROM lineasproducto WHERE lineaproducto = ?";
 
-        try ( PreparedStatement statement = connection.prepareStatement(sql)) {
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, linea);
 
             statement.executeUpdate();
@@ -90,7 +90,7 @@ public class Conexion {
     public void eliminarCliente(int idCliente) throws SQLException {
         String sql = "DELETE FROM clientes WHERE idcliente = ?";
 
-        try ( PreparedStatement statement = connection.prepareStatement(sql)) {
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setInt(1, idCliente);
 
             statement.executeUpdate();
@@ -100,7 +100,7 @@ public class Conexion {
     public void eliminarEmpleado(int idEmpleado) throws SQLException {
         String sql = "DELETE FROM empleados WHERE idempleados = ?";
 
-        try ( PreparedStatement statement = connection.prepareStatement(sql)) {
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setInt(1, idEmpleado);
 
             statement.executeUpdate();
@@ -110,7 +110,7 @@ public class Conexion {
     public void eliminarPedido(int idPedido) throws SQLException {
         String sql = "DELETE FROM pedidos WHERE idpedido = ?";
 
-        try ( PreparedStatement statement = connection.prepareStatement(sql)) {
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setInt(1, idPedido);
 
             statement.executeUpdate();
@@ -121,7 +121,7 @@ public class Conexion {
         String sql = "UPDATE productos SET nombreproducto = ?, lineaproducto = ?, descripcion = ?, "
                 + "cantidadEnStock = ?, pvp = ?, proveedor = ?, eliminado = ? WHERE idproducto = ?";
 
-        try ( PreparedStatement statement = connection.prepareStatement(sql)) {
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, producto.getNombre());
             statement.setString(2, producto.getLineaProducto().getLinea());
             statement.setString(3, producto.getDescripcion());
@@ -138,7 +138,7 @@ public class Conexion {
     public void actualizarProveedor(Proveedor proveedor) throws SQLException {
         String sql = "UPDATE proveedores SET nombreEmpresa = ?, nombreContacto = ?, ciudad = ?, telefono = ?, paginaweb = ? WHERE idproveedor = ?";;
 
-        try ( PreparedStatement statement = connection.prepareStatement(sql)) {
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, proveedor.getNombreEmpresa());
             statement.setString(2, proveedor.getNombreContacto());
             statement.setInt(3, proveedor.getCiudad().getIdciudad());
@@ -153,7 +153,7 @@ public class Conexion {
     public void actualizarLineasProducto(LineaProducto linea, String id) throws SQLException {
         String sql = "UPDATE lineasproducto SET lineaproducto = ?, descripcion = ? WHERE lineaproducto = ?";;
 
-        try ( PreparedStatement statement = connection.prepareStatement(sql)) {
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, linea.getLinea());
             statement.setString(2, linea.getDescripcion());
             statement.setString(3, id);
@@ -165,7 +165,7 @@ public class Conexion {
     public void actualizarCliente(Cliente cliente) throws SQLException {
         String sql = "UPDATE clientes SET nombre = ?, telefono = ?, direccion = ?, ciudad = ?, codigoPostal = ?, email = ? WHERE idcliente = ?";;
 
-        try ( PreparedStatement statement = connection.prepareStatement(sql)) {
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, cliente.getNombre());
             statement.setString(2, cliente.getTelefono());
             statement.setString(3, cliente.getDireccion());
@@ -395,5 +395,109 @@ public class Conexion {
             System.out.println(exception);
         }
         return ciudades;
+    }
+
+    public void insertarPedido(Pedido pedido, List<DetallesPedido> detallesPedido) throws SQLException {
+        String sql = "INSERT INTO `crud_app`.`pedidos`(`idcliente`,`idempleado`,`fechaPedido`,`direccionPedido`,`ciudadPedido`,`codigopostalPedido`) VALUES (?,?,curdate(),?,?,?);";
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setInt(1, pedido.getCliente().getIdClientes());
+            statement.setInt(2, pedido.getEmpleado().getIdempleado());
+            statement.setString(3, pedido.getDireccionPedido());
+            statement.setInt(4, pedido.getCiudadPedido().getIdciudad());
+            statement.setString(5, pedido.getCodigopostalPedido());
+
+            statement.executeUpdate();
+        }
+        String sqlid = "SELECT idpedido FROM pedidos ORDER BY idpedido DESC LIMIT 1";
+        Statement statement = connection.createStatement();
+        ResultSet resultSet = statement.executeQuery(sqlid);
+
+        int idpedido;
+        if (resultSet.next()) {
+            // process resultset
+            idpedido = resultSet.getInt("idpedido");
+        } else {
+            // do something when no data arrived
+            idpedido = -1;
+        }
+
+        String sqldp = "INSERT INTO `crud_app`.`detallespedido` (`idpedido`,`idproducto`,`cantidad`,`precio_venta`) VALUES (?,?,?,?);";
+        for (DetallesPedido dp : detallesPedido) {
+            try (PreparedStatement statement2 = connection.prepareStatement(sqldp)) {
+                statement2.setInt(1, idpedido);
+                statement2.setInt(2, dp.getIdproducto().getIdProducto());
+                statement2.setInt(3, dp.getCantidad());
+                statement2.setFloat(4, dp.getIdproducto().getPvp());
+
+                statement2.executeUpdate();
+            }
+        }
+
+    }
+
+    public void insertarProveedor(Proveedor proveedor) throws SQLException {
+        String sql = "INSERT INTO proveedores (nombreEmpresa, nombreContacto, ciudad, telefono, paginaweb) VALUES (?, ?, ?, ?, ?)";
+
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setString(1, proveedor.getNombreEmpresa());
+            statement.setString(2, proveedor.getNombreContacto());
+            statement.setInt(3, proveedor.getCiudad().getIdciudad());
+            statement.setString(4, proveedor.getTelefono());
+            statement.setString(5, proveedor.getPaginaweb());
+
+            statement.executeUpdate();
+        }
+    }
+
+    public void insertarCliente(Cliente cliente) throws SQLException {
+        String sql = "INSERT INTO clientes (nombre, telefono, direccion, ciudad, codigoPostal,email) VALUES (?, ?, ?, ?, ?,?)";
+
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setString(1, cliente.getNombre());
+            statement.setString(2, cliente.getTelefono());
+            statement.setString(3, cliente.getDireccion());
+            statement.setInt(4, cliente.getCiudad().getIdciudad());
+            statement.setString(5, cliente.getCodigoPostal());
+            statement.setString(6, cliente.getEmail());
+
+            statement.executeUpdate();
+        }
+    }
+
+    public void insertarEmpleado(Empleado empleado) throws SQLException {
+
+        String sql;
+        if (empleado.getUsuario() instanceof Usuario) {
+            sql = "INSERT INTO empleados (nombre, apellido1, apellido2, DNI, telefono,email,idusuario) VALUES (?, ?, ?, ?, ?,?,?)";
+
+        } else {
+            sql = "INSERT INTO empleados (nombre, apellido1, apellido2, DNI, telefono,email) VALUES (?, ?, ?, ?, ?,?)";
+
+        }
+
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setString(1, empleado.getNombre());
+            statement.setString(2, empleado.getApellido1());
+            statement.setString(3, empleado.getApellido2());
+            statement.setString(4, empleado.getDni());
+            statement.setString(5, empleado.getTelefono());
+            statement.setString(6, empleado.getEmail());
+            if (empleado.getUsuario() instanceof Usuario) {
+                statement.setInt(7, empleado.getUsuario().getIdUsuario());
+            }
+            statement.executeUpdate();
+        }
+    }
+    
+    public void insertarLineaproducto(LineaProducto linea) throws SQLException {
+
+        String sql = "INSERT INTO lineasproducto(lineaproducto,descripcion) VALUES (?,?)";
+
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setString(1, linea.getLinea());
+            statement.setString(2, linea.getDescripcion());
+            
+            statement.executeUpdate();
+        }
     }
 }
