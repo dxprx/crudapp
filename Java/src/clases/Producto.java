@@ -5,11 +5,14 @@
  */
 package clases;
 
+import java.util.Objects;
+
 /**
  *
  * @author oscar
  */
 public class Producto {
+
     private int idProducto;
     private String nombre;
     private LineaProducto lineaProducto;
@@ -33,8 +36,6 @@ public class Producto {
     public Producto() {
     }
 
-    
-    
     public Proveedor getProveedor() {
         return proveedor;
     }
@@ -50,8 +51,7 @@ public class Producto {
     public void setEliminado(boolean eliminado) {
         this.eliminado = eliminado;
     }
-    
-    
+
     public LineaProducto getLineaProducto() {
         return lineaProducto;
     }
@@ -101,8 +101,20 @@ public class Producto {
     }
 
     @Override
-    public String toString() {
-        return "Producto [idProducto=" + idProducto + ", nombre=" + nombre + ", descripcion=" + descripcion + ", precio="
-                + pvp + ", stock=" + stock + "]";
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Producto producto = (Producto) obj;
+        return idProducto == producto.idProducto;
     }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(idProducto);
+    }
+
 }

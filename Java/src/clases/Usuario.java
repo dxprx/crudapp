@@ -21,6 +21,9 @@ public class Usuario {
         this.role = role;
     }
 
+    public Usuario() {
+    }
+
     
     
     public String getUsuario() {

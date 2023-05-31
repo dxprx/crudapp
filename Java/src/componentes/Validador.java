@@ -12,6 +12,8 @@ import javax.swing.JOptionPane;
  *
  * @author DAW
  */
+import java.util.regex.Pattern;
+
 public class Validador {
 
     private static Validador instance = new Validador();
@@ -19,20 +21,48 @@ public class Validador {
     private Validador() {
 
     }
-    
-    private String error = "Error de validación";
-    
+
     public static Validador getInstance() {
         return instance;
     }
-    
-    public boolean validarNumerico(String dato){
-        Pattern patron = Pattern.compile("[0-9]*");
-        Matcher match = patron.matcher(dato);
-        if(!match.find()){
-        JOptionPane.showMessageDialog(null, "El dato introducido no es un número.", error, JOptionPane.ERROR_MESSAGE);
-        return false;
-        }
-        return true;
+
+    public static boolean validarTelefono(String telefono) {
+        String regex = "\\d{9}";
+        return Pattern.matches(regex, telefono);
+    }
+
+    public static boolean validarCodigoPostal(String codigoPostal) {
+        String regex = "\\d{5}";
+        return Pattern.matches(regex, codigoPostal);
+    }
+
+    public static boolean validarCorreoElectronico(String correoElectronico) {
+        String regex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
+        return Pattern.matches(regex, correoElectronico);
+    }
+
+    public static boolean validarNumeroPositivo(String numero) {
+        String regex = "\\d+(\\.\\d+)?";
+        return Pattern.matches(regex, numero) && Float.parseFloat(numero) > 0;
+    }
+
+    public boolean validarPaginaWeb(String paginaWeb) {
+        // Expresión regular para validar URLs de páginas web
+        String patron = "^(http://|https://)?(www\\.)?[a-zA-Z0-9]+(\\.[a-zA-Z]{2,}){1,3}(/\\S*)?$";
+        return Pattern.matches(patron, paginaWeb);
+    }
+
+    public boolean validarDNI(String dni) {
+        // Expresión regular para validar el formato del DNI (8 dígitos seguidos de una letra)
+        String regex = "\\d{8}[A-Za-z]";
+
+        return dni.matches(regex);
+    }
+
+    public boolean noEstaVacio(String texto) {
+        // Expresión regular que verifica que el string no esté vacío
+        String regex = "^(?!\\s*$).+";
+
+        return texto.matches(regex);
     }
 }

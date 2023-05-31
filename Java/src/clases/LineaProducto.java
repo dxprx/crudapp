@@ -5,6 +5,8 @@
  */
 package clases;
 
+import java.util.Objects;
+
 /**
  *
  * @author oscar
@@ -38,5 +40,22 @@ public class LineaProducto {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
+
+       @Override
+    public String toString() {
+        return this.linea; //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
+    @Override
+    public boolean equals(Object obj) {
+        return this.linea.equals(obj.toString()); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(this.linea); //To change body of generated methods, choose Tools | Templates.
+    }
+    
     
 }

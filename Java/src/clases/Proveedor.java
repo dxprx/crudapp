@@ -5,6 +5,8 @@
  */
 package clases;
 
+import java.util.Objects;
+
 /**
  *
  * @author oscar
@@ -79,5 +81,19 @@ public class Proveedor {
         this.paginaweb = paginaweb;
     }
     
+           @Override
+    public String toString() {
+        return this.nombreEmpresa; //To change body of generated methods, choose Tools | Templates.
+    }
     
+    
+    @Override
+    public boolean equals(Object obj) {
+        return this.nombreEmpresa.equals(obj.toString()); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(this.nombreEmpresa); //To change body of generated methods, choose Tools | Templates.
+    }
 }

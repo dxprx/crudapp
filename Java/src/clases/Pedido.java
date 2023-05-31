@@ -7,35 +7,29 @@ package clases;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 
 /**
  *
  * @author oscar
  */
 public class Pedido {
+
     private int idpedido;
     private Cliente cliente;
     private Empleado empleado;
     private Date fechaPedido;
-    private String direccionPedido;
-    private Ciudad ciudadPedido;
-    private String codigopostalPedido;
 
-    public Pedido(int idpedido, Cliente cliente, Empleado empleado, Date fechaPedido, String direccionPedido, Ciudad ciudadPedido, String codigopostalPedido) {
+    public Pedido(int idpedido, Cliente cliente, Empleado empleado, Date fechaPedido) {
         this.idpedido = idpedido;
         this.cliente = cliente;
         this.empleado = empleado;
         this.fechaPedido = fechaPedido;
-        this.direccionPedido = direccionPedido;
-        this.ciudadPedido = ciudadPedido;
-        this.codigopostalPedido = codigopostalPedido;
-    } 
+    }
 
     public Pedido() {
     }
-    
-    
-    
+
     public int getIdpedido() {
         return idpedido;
     }
@@ -68,29 +62,21 @@ public class Pedido {
         this.fechaPedido = fechaPedido;
     }
 
-    public String getDireccionPedido() {
-        return direccionPedido;
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Pedido pedido = (Pedido) obj;
+        return idpedido == pedido.idpedido;
     }
 
-    public void setDireccionPedido(String direccionPedido) {
-        this.direccionPedido = direccionPedido;
+    @Override
+    public int hashCode() {
+        return Objects.hash(idpedido);
     }
 
-    public Ciudad getCiudadPedido() {
-        return ciudadPedido;
-    }
-
-    public void setCiudadPedido(Ciudad ciudadPedido) {
-        this.ciudadPedido = ciudadPedido;
-    }
-
-    public String getCodigopostalPedido() {
-        return codigopostalPedido;
-    }
-
-    public void setCodigopostalPedido(String codigopostalPedido) {
-        this.codigopostalPedido = codigopostalPedido;
-    }
-    
-    
 }

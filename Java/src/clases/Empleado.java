@@ -5,11 +5,14 @@
  */
 package clases;
 
+import java.util.Objects;
+
 /**
  *
  * @author oscar
  */
 public class Empleado {
+
     private int idempleado;
     private String nombre;
     private String apellido1;
@@ -18,8 +21,9 @@ public class Empleado {
     private String telefono;
     private String email;
     private Usuario usuario;
+    private float salario;
 
-    public Empleado(int idempleado, String nombre, String apellido1, String apellido2, String dni, String telefono, String email, Usuario usuario) {
+    public Empleado(int idempleado, String nombre, String apellido1, String apellido2, String dni, String telefono, String email, Usuario usuario, float salario) {
         this.idempleado = idempleado;
         this.nombre = nombre;
         this.apellido1 = apellido1;
@@ -28,13 +32,20 @@ public class Empleado {
         this.telefono = telefono;
         this.email = email;
         this.usuario = usuario;
+        this.salario = salario;
     }
 
     public Empleado() {
     }
 
-    
-    
+    public float getSalario() {
+        return salario;
+    }
+
+    public void setSalario(float salario) {
+        this.salario = salario;
+    }
+
     public int getIdempleado() {
         return idempleado;
     }
@@ -98,6 +109,21 @@ public class Empleado {
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
-    
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Empleado empleado = (Empleado) obj;
+        return idempleado == empleado.idempleado;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(idempleado);
+    }
 }

@@ -13,11 +13,11 @@ import java.util.List;
  */
 public class DetallesPedido {
     private Pedido pedido;
-    private Producto producto;
+    private int producto;
     private int cantidad;
     private float precio_venta;
 
-    public DetallesPedido(Pedido pedido, Producto producto, int cantidad, float precio_venta) {
+    public DetallesPedido(Pedido pedido, int producto, int cantidad, float precio_venta) {
         this.pedido = pedido;
         this.producto = producto;
         this.cantidad = cantidad;
@@ -37,11 +37,11 @@ public class DetallesPedido {
         this.pedido = pedido;
     }
 
-    public Producto getIdproducto() {
+    public int getIdproducto() {
         return producto;
     }
 
-    public void setIdproducto(Producto producto) {
+    public void setIdproducto(int producto) {
         this.producto = producto;
     }
 

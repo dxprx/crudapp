@@ -5,11 +5,14 @@
  */
 package clases;
 
+import java.util.Objects;
+
 /**
  *
  * @author oscar
  */
 public class Cliente {
+
     private int idClientes;
     private String nombre;
     private String telefono;
@@ -31,8 +34,6 @@ public class Cliente {
     public Cliente() {
     }
 
-    
-    
     public int getIdClientes() {
         return idClientes;
     }
@@ -93,5 +94,22 @@ public class Cliente {
     public String toString() {
         return "Cliente [idClientes=" + idClientes + ", nombre=" + nombre + ", telefono=" + telefono + ", direccion="
                 + direccion + ", ciudad=" + ciudad + ", codigoPostal=" + codigoPostal + ", email=" + email + "]";
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Cliente cliente = (Cliente) obj;
+        return idClientes == cliente.idClientes;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(idClientes);
     }
 }
