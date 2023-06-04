@@ -18,6 +18,7 @@ import java.util.List;
 import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.table.DefaultTableModel;
+import java.lang.Runtime;
 
 public class Conexion {
 
@@ -37,6 +38,7 @@ public class Conexion {
 
     public void conectar() throws SQLException {
         connection = DriverManager.getConnection(db, db_user, db_password);
+        
     }
 
     public void desconectar() throws SQLException {

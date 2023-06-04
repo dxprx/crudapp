@@ -16,6 +16,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.*;
 import mysql.Conexion;
+import componentes.*;
 
 /**
  *
@@ -24,6 +25,9 @@ import mysql.Conexion;
 public class InicioSesion extends javax.swing.JFrame {
 
     private static final Conexion conexion = Conexion.getInstance();
+
+    String imagePath = "src/img/compraventa-estancos.png"; // Reemplaza con la ruta correcta de tu imagen
+    ImageIcon imageIcon = new ImageIcon(imagePath);
 
     /**
      * Creates new form app
@@ -34,7 +38,16 @@ public class InicioSesion extends javax.swing.JFrame {
         this.setSize(750, 500);
         this.setLocationRelativeTo(null);
         this.setVisible(true);
+        this.setResizable(false);
         user_pass_incorrecto.setVisible(false);
+        this.pack();
+        this.setIconImage(imageIcon.getImage());
+        
+        TextField tf = (TextField) jtf_usuario;
+        tf.setLabelText("Usuario");
+        PasswordField pf = (PasswordField) jtf_password;
+        pf.setLabelText("Contraseña");
+        
     }
 
     /**
@@ -46,15 +59,17 @@ public class InicioSesion extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jtf_usuario = new javax.swing.JTextField();
-        jb_entrar = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        jtf_usuario = new componentes.TextField()
+        ;
+        jb_entrar = new componentes.ButtonGradient();
         user_pass_incorrecto = new javax.swing.JLabel();
-        jtf_password = new javax.swing.JPasswordField();
+        jtf_password = new componentes.PasswordField();
         jPanel1 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
         setSize(new java.awt.Dimension(200, 450));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -63,7 +78,7 @@ public class InicioSesion extends javax.swing.JFrame {
                 jtf_usuarioKeyPressed(evt);
             }
         });
-        getContentPane().add(jtf_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, 150, -1));
+        getContentPane().add(jtf_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 210, -1));
 
         jb_entrar.setText("Entrar");
         jb_entrar.addActionListener(new java.awt.event.ActionListener() {
@@ -71,29 +86,30 @@ public class InicioSesion extends javax.swing.JFrame {
                 jb_entrarActionPerformed(evt);
             }
         });
-        getContentPane().add(jb_entrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 280, 150, -1));
+        getContentPane().add(jb_entrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 320, 180, -1));
 
-        jLabel1.setLabelFor(jtf_password);
-        jLabel1.setText("Contraseña");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 200, -1, -1));
-
-        jLabel2.setLabelFor(jtf_usuario);
-        jLabel2.setText("Usuario");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, -1, -1));
-
-        user_pass_incorrecto.setForeground(new java.awt.Color(255, 0, 51));
+        user_pass_incorrecto.setForeground(new java.awt.Color(135, 32, 49));
         user_pass_incorrecto.setText("El usuario o contraseña son incorrectos");
-        getContentPane().add(user_pass_incorrecto, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 250, -1, -1));
+        getContentPane().add(user_pass_incorrecto, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 276, 220, 20));
 
         jtf_password.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jtf_passwordKeyPressed(evt);
             }
         });
-        getContentPane().add(jtf_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, 150, -1));
+        getContentPane().add(jtf_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 210, -1));
 
-        jPanel1.setBackground(new java.awt.Color(85, 26, 2));
+        jPanel1.setBackground(new java.awt.Color(135, 32, 49));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/compraventa-estancos-200_x_200.png"))); // NOI18N
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 190, 190));
+
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 450, 500));
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 500));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -110,10 +126,9 @@ public class InicioSesion extends javax.swing.JFrame {
             this.dispose();
             main.setVisible(true);
         } else {
-            jtf_password.setBackground(Color.RED);
+            jtf_password.setBackground(new Color(135, 32, 49, 150));
             user_pass_incorrecto.setVisible(true);
         }
-        
 
     }
 
@@ -201,9 +216,9 @@ public class InicioSesion extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JButton jb_entrar;
     private javax.swing.JPasswordField jtf_password;
     private javax.swing.JTextField jtf_usuario;
