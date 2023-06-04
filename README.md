@@ -120,8 +120,7 @@ src="README_imgs/image008.png" alt="Title: Insertando imagen...">
 id="Imagen 2019521721" src="README_imgs/image009.png"
 alt="Title: Insertando imagen...">
 
-### [Modificar una línea de productos ya
-existente](null)
+### [Modificar una línea de productos ya existente]
 
 <img width=226 height=239 id="Imagen 742375282"
 src="README_imgs/image010.png" alt="Title: Insertando imagen...">
