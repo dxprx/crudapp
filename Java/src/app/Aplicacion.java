@@ -93,13 +93,13 @@ public class Aplicacion extends javax.swing.JFrame {
 
             // Cambiar el color de fondo de la fila si está eliminada
             if (producto.isEliminado() && producto.getStock() > 0) {
-                component.setBackground(new Color(253,188,60,150));
+                component.setBackground(new Color(253, 188, 60, 150));
             } else if (producto.isEliminado() && producto.getStock() == 0) {
                 component.setBackground(new Color(135, 32, 49, 150)); //Rojo
             } else if (isSelected) {
-                component.setBackground(new Color(0,5,255,142)); //azulitoverdoso
+                component.setBackground(new Color(0, 5, 255, 142)); //azulitoverdoso
             } else if (producto.getStock() == 0) {
-                component.setBackground(new Color(253,188,60,150)); // naranga
+                component.setBackground(new Color(253, 188, 60, 150)); // naranga
             } else {
                 component.setBackground(table.getBackground());
             }
@@ -116,7 +116,7 @@ public class Aplicacion extends javax.swing.JFrame {
 
             // Cambiar el color de fondo de la fila si está eliminada
             if (isSelected) {
-                component.setBackground(new Color(0,5,255,142));
+                component.setBackground(new Color(0, 5, 255, 142));
             } else {
                 component.setBackground(table.getBackground());
             }
@@ -239,8 +239,8 @@ public class Aplicacion extends javax.swing.JFrame {
         ImageIcon imageIcon = new ImageIcon(imagePath);
         this.setIconImage(imageIcon.getImage());
 
-        String[] titulos_insertar_cliente = {"Nombre", "Teléfono", "Dirección", "Código postal" , "Email"};
-        JTextField[] jtf_insertar_cliente = {jTextField34, jTextField35, jTextField36, jTextField37,jTextField38};
+        String[] titulos_insertar_cliente = {"Nombre*", "Teléfono*", "Dirección*", "Código postal*", "Email*"};
+        JTextField[] jtf_insertar_cliente = {jTextField34, jTextField35, jTextField36, jTextField37, jTextField38};
         for (int i = 0; i < jtf_insertar_cliente.length; i++) {
             TextField tf = (TextField) jtf_insertar_cliente[i];
             tf.setLabelText(titulos_insertar_cliente[i]);
@@ -252,8 +252,8 @@ public class Aplicacion extends javax.swing.JFrame {
         jframe_insertar_clientes.setResizable(false);
         jframe_insertar_clientes.setIconImage(imageIcon.getImage());
 
-        String[] titulos_insertar_empleado = {"Nombre", "Primer apellido", "Segundo apellido", "DNI","Teléfono","Email","Salario","Usuario"};
-        JTextField[] jtf_insertar_empleado = {jTextField39, jTextField40, jTextField41, jTextField42,jTextField44,jTextField43,jTextField48};
+        String[] titulos_insertar_empleado = {"Nombre*", "Primer apellido*", "Segundo apellido*", "DNI*", "Teléfono*", "Email*", "Salario*", "Usuario*"};
+        JTextField[] jtf_insertar_empleado = {jTextField39, jTextField40, jTextField41, jTextField42, jTextField44, jTextField43, jTextField48, jTextField21};
         for (int i = 0; i < jtf_insertar_empleado.length; i++) {
             TextField tf = (TextField) jtf_insertar_empleado[i];
             tf.setLabelText(titulos_insertar_empleado[i]);
@@ -265,7 +265,7 @@ public class Aplicacion extends javax.swing.JFrame {
         jframe_insertar_empleados.setResizable(false);
         jframe_insertar_empleados.setIconImage(imageIcon.getImage());
 
-        String[] titulos_insertar_linea = {"Línea"};
+        String[] titulos_insertar_linea = {"Línea*"};
         JTextField[] jtf_insertar_linea = {jTextField33};
         for (int i = 0; i < jtf_insertar_linea.length; i++) {
             TextField tf = (TextField) jtf_insertar_linea[i];
@@ -291,7 +291,7 @@ public class Aplicacion extends javax.swing.JFrame {
         jframe_insertar_pedidos.setResizable(false);
         jframe_insertar_pedidos.setIconImage(imageIcon.getImage());
 
-        String[] titulos_insertar_producto = {"Producto", "Descripción", "Stock", "Precio"};
+        String[] titulos_insertar_producto = {"Producto*", "Descripción", "Stock*", "Precio*"};
         JTextField[] jtf_insertar_producto = {jTextField11, jTextField12, jTextField27, jTextField28};
         for (int i = 0; i < jtf_insertar_producto.length; i++) {
             TextField tf = (TextField) jtf_insertar_producto[i];
@@ -304,7 +304,7 @@ public class Aplicacion extends javax.swing.JFrame {
         jframe_insertar_productos.setResizable(false);
         jframe_insertar_productos.setIconImage(imageIcon.getImage());
 
-        String[] titulos_insertar_proveedor = {"Empresa", "Contacto", "Teléfono", "Sitio web"};
+        String[] titulos_insertar_proveedor = {"Empresa*", "Contacto", "Teléfono*", "Sitio web*"};
         JTextField[] jtf_insertar_proveedor = {jTextField29, jTextField30, jTextField31, jTextField32};
         for (int i = 0; i < jtf_insertar_proveedor.length; i++) {
             TextField tf = (TextField) jtf_insertar_proveedor[i];
@@ -317,8 +317,8 @@ public class Aplicacion extends javax.swing.JFrame {
         jframe_insertar_proveedores.setResizable(false);
         jframe_insertar_proveedores.setIconImage(imageIcon.getImage());
 
-        String[] titulos_modificar_cliente = {"Nombre", "Teléfono", "Dirección", "Código postal" , "Email"};
-        JTextField[] jtf_modificar_cliente = {jTextField13, jTextField14, jTextField15, jTextField16,jTextField10};
+        String[] titulos_modificar_cliente = {"Nombre*", "Teléfono*", "Dirección*", "Código postal*", "Email*"};
+        JTextField[] jtf_modificar_cliente = {jTextField13, jTextField14, jTextField15, jTextField16, jTextField10};
         for (int i = 0; i < jtf_modificar_cliente.length; i++) {
             TextField tf = (TextField) jtf_modificar_cliente[i];
             tf.setLabelText(titulos_modificar_cliente[i]);
@@ -330,8 +330,8 @@ public class Aplicacion extends javax.swing.JFrame {
         jframe_modificar_clientes.setResizable(false);
         jframe_modificar_clientes.setIconImage(imageIcon.getImage());
 
-        String[] titulos_modificar_empleado = {"Nombre", "Primer apellido", "Segundo apellido", "DNI","Teléfono","Email","Salario","Usuario"};
-        JTextField[] jtf_modificar_empleado = {jTextField17, jTextField18, jTextField19, jTextField20,jTextField25,jTextField26,jTextField47,jTextField22};
+        String[] titulos_modificar_empleado = {"Nombre*", "Primer apellido*", "Segundo apellido*", "DNI*", "Teléfono*", "Email*", "Salario*", "Usuario"};
+        JTextField[] jtf_modificar_empleado = {jTextField17, jTextField18, jTextField19, jTextField20, jTextField25, jTextField26, jTextField47, jTextField22};
         for (int i = 0; i < jtf_modificar_empleado.length; i++) {
             TextField tf = (TextField) jtf_modificar_empleado[i];
             tf.setLabelText(titulos_modificar_empleado[i]);
@@ -343,7 +343,7 @@ public class Aplicacion extends javax.swing.JFrame {
         jframe_modificar_empleados.setResizable(false);
         jframe_modificar_empleados.setIconImage(imageIcon.getImage());
 
-        String[] titulos_modificar_linea = {"Línea"};
+        String[] titulos_modificar_linea = {"Línea*"};
         JTextField[] jtf_modificar_linea = {jTextField9};
         for (int i = 0; i < jtf_modificar_linea.length; i++) {
             TextField tf = (TextField) jtf_modificar_linea[i];
@@ -356,7 +356,7 @@ public class Aplicacion extends javax.swing.JFrame {
         jframe_modificar_lineas.setResizable(false);
         jframe_modificar_lineas.setIconImage(imageIcon.getImage());
 
-        String[] titulos_modificar_productos = {"Producto", "Descripción", "Stock", "Precio"};
+        String[] titulos_modificar_productos = {"Producto*", "Descripción", "Stock*", "Precio*"};
         JTextField[] jtf_modificar_productos = {jTextField1, jTextField2, jTextField3, jTextField4};
         for (int i = 0; i < jtf_modificar_productos.length; i++) {
             TextField tf = (TextField) jtf_modificar_productos[i];
@@ -369,7 +369,7 @@ public class Aplicacion extends javax.swing.JFrame {
         jframe_modificar_productos.setResizable(false);
         jframe_modificar_productos.setIconImage(imageIcon.getImage());
 
-        String[] titulos_modificar_proveedor = {"Empresa", "Contacto", "Teléfono", "Sitio web"};
+        String[] titulos_modificar_proveedor = {"Empresa*", "Contacto", "Teléfono*", "Sitio web*"};
         JTextField[] jtf_modificar_proveedor = {jTextField5, jTextField6, jTextField7, jTextField8};
         for (int i = 0; i < jtf_modificar_proveedor.length; i++) {
             TextField tf = (TextField) jtf_modificar_proveedor[i];
@@ -382,8 +382,8 @@ public class Aplicacion extends javax.swing.JFrame {
         jframe_modificar_proveedores.setResizable(false);
         jframe_modificar_proveedores.setIconImage(imageIcon.getImage());
 
-        String[] titulos_mostrar_detallespedido = {"ID pedido", "Cliente", "Empleado", "Fecha","Total (€)"};
-        JTextField[] jtf_mostrar_detallespedido = {jTextField45, jTextField23, jTextField24, jTextField46,jTextField50};
+        String[] titulos_mostrar_detallespedido = {"ID pedido", "Cliente", "Empleado", "Fecha", "Total (€)"};
+        JTextField[] jtf_mostrar_detallespedido = {jTextField45, jTextField23, jTextField24, jTextField46, jTextField50};
         for (int i = 0; i < jtf_mostrar_detallespedido.length; i++) {
             TextField tf = (TextField) jtf_mostrar_detallespedido[i];
             tf.setLabelText(titulos_mostrar_detallespedido[i]);
@@ -540,10 +540,11 @@ public class Aplicacion extends javax.swing.JFrame {
                 documento.add(new Paragraph("Le atendió: " + empleado));
                 documento.add(new Paragraph("Fecha de compra: " + fecha));
 
-                PdfPTable tablaProductos = new PdfPTable(3);
+                PdfPTable tablaProductos = new PdfPTable(4);
                 tablaProductos.setWidthPercentage(100);
                 tablaProductos.addCell(new PdfPCell(new Phrase("ID")));
                 tablaProductos.addCell(new PdfPCell(new Phrase("Producto")));
+                tablaProductos.addCell(new PdfPCell(new Phrase("Cantidad")));
                 tablaProductos.addCell(new PdfPCell(new Phrase("Precio/unidad")));
 
                 LineSeparator lineSeparator2 = new LineSeparator();
@@ -554,6 +555,7 @@ public class Aplicacion extends javax.swing.JFrame {
                     tablaProductos.addCell(new PdfPCell(new Phrase(producto[0].toString())));
                     tablaProductos.addCell(new PdfPCell(new Phrase(producto[1].toString())));
                     tablaProductos.addCell(new PdfPCell(new Phrase(producto[2].toString())));
+                    tablaProductos.addCell(new PdfPCell(new Phrase(producto[3].toString())));
                 }
 
                 tablaProductos.setSpacingAfter(10);
@@ -1976,17 +1978,20 @@ public class Aplicacion extends javax.swing.JFrame {
         if (jTabbedPane1.getTitleAt(jTabbedPane1.getSelectedIndex()).equals("Empleados")) {
             if (tabla_empleados.getSelectedRow() != -1) {
                 try {
-                    if (JOptionPane.showConfirmDialog(null, "¿Estás seguro de que deseas eliminar el empleado?", "Confirmación de eliminación", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
-                        int id = (int) dtm_empleados.getValueAt(tabla_empleados.getSelectedRow(), 0);
-                        conexion.conectar();
-                        conexion.eliminarEmpleado(id);
-                        if (!dtm_empleados.getValueAt(tabla_empleados.getSelectedRow(), 8).equals(null)) {
-                            int idusuario = (int) dtm_empleados.getValueAt(tabla_empleados.getSelectedRow(), 8);
-                            conexion.eliminarUsuario(idusuario);
+                    if (dtm_empleados.getValueAt(tabla_empleados.getSelectedRow(), 8).equals(usuario.getUsuario().getIdUsuario())) {
+                        JOptionPane.showMessageDialog(null, "No puedes eliminarte a ti mismo", "Error", JOptionPane.ERROR_MESSAGE);
+                    } else {
+                        if (JOptionPane.showConfirmDialog(null, "¿Estás seguro de que deseas eliminar el empleado?", "Confirmación de eliminación", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+                            int id = (int) dtm_empleados.getValueAt(tabla_empleados.getSelectedRow(), 0);
+                            conexion.conectar();
+                            conexion.eliminarEmpleado(id);
+                            if (!dtm_empleados.getValueAt(tabla_empleados.getSelectedRow(), 8).equals(null)) {
+                                int idusuario = (int) dtm_empleados.getValueAt(tabla_empleados.getSelectedRow(), 8);
+                                conexion.eliminarUsuario(idusuario);
+                            }
+                            conexion.desconectar();
+                            actualizarTablas();
                         }
-                        conexion.desconectar();
-                        actualizarTablas();
-
                     }
 
                 } catch (SQLException ex) {
