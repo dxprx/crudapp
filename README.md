@@ -1,28 +1,3 @@
-# crudapp
-Java CRUD App
-<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 align=left
- width="77%" style='width:77.14%;border-collapse:collapse;margin-left:7.1pt;
- margin-right:7.1pt'>
- 
-  
-  ÓSCAR
-  GONZÁLEZ PÉREZ
-  1º
-  DAW
-  &nbsp;
-  
- 
-
-
-<br
-clear=all style='page-break-before:always'>
-
-
-&nbsp;
-
-<span lang=ES style='font-size:18.0pt;
-line-height:107%'>Índice
-
 1. [Iniciar sesión](#iniciar-sesión)
 2. [Insertar, modificar y eliminar elementos](#insertar-modificar-y-eliminar-elementos)
     - [Insertar un nuevo producto](#insertar-un-nuevo-producto)
