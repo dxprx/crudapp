@@ -88,8 +88,7 @@ proporcionadas por un administrador.
 <img width=445 height=316 id="Imagen 298684095"
 src="README_imgs/image001.jpg">
 
-## [Insertar, modificar y eliminar
-elementos](null)
+## [Insertar, modificar y eliminar elementos](null)
 
 En esta aplicación, teniendo el privilegio de
 usuario podrás consultar las tablas de productos, proveedores, líneas de
@@ -151,7 +150,7 @@ src="README_imgs/image004.png" alt="Title: Insertando imagen...">
 ### [Modificar un producto ya existente](null)
 
 <img width=229 height=271
-id="Imagen 1084753437" src="Manual%20de%20usuario_files/image005.png"
+id="Imagen 1084753437" src="README_imgs/image005.png"
 alt="Title: Insertando imagen...">
 
 ### [Eliminar un producto](null)
@@ -194,27 +193,23 @@ src="README_imgs/image011.png" alt="Title: Insertando imagen...">
 <img width=228 height=307 id="Imagen 35257168"
 src="README_imgs/image012.png" alt="Title: Insertando imagen...">
 
-### [Insertar un nuevo empleado (sin
-asignar usuario)](null)
+### [Insertar un nuevo empleado (sin asignar usuario)](null)
 
 <img width=215 height=373 id="Imagen 660388416"
 src="README_imgs/image013.png" alt="Title: Insertando imagen...">
 
-### [Insertar un nuevo empleado (asignando
-usuario)](null)
+### [Insertar un nuevo empleado (asignando usuario)](null)
 
 <img width=219 height=374
 id="Imagen 1648889154" src="README_imgs/image014.png"
 alt="Title: Insertando imagen...">
 
-### [Modificar un empleado ya existente
-(con usuario asignado)](null)
+### [Modificar un empleado ya existente (con usuario asignado)](null)
 
 <img width=228 height=393 id="Imagen 209084739"
 src="README_imgs/image015.png" alt="Title: Insertando imagen...">
 
-### [Modificar un empleado ya existente
-(sin usuario asignado)](null)
+### [Modificar un empleado ya existente (sin usuario asignado)](null)
 
 <img width=220 height=377
 id="Imagen 1493841760" src="README_imgs/image016.png"
@@ -232,8 +227,7 @@ de datos abajo a la derecha.
 <img width=415 height=190 id="Imagen 617001476"
 src="README_imgs/image017.png" alt="Title: Insertando imagen...">
 
-#### [Añadir y eliminar productos del carrito
-de compra](null)
+#### [Añadir y eliminar productos del carrito de compra](null)
 
 Para insertar un producto al carrito de compra
 es necesario seleccionar un producto de la lista de productos en venta,
@@ -260,8 +254,7 @@ clic izquierdo sobre el pedido que se quiera consultar.
 id="Imagen 1496070775" src="README_imgs/image019.png"
 alt="Title: Insertando imagen...">
 
-#### [Exportar facturas de un pedido a
-formato PDF](null)
+#### [Exportar facturas de un pedido a formato PDF](null)
 
 Si damos al botón que dice “Exportar factura”
 nos aparecerá una ventana emergente para poder seleccionar una ruta de destino
