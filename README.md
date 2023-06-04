@@ -23,53 +23,32 @@ clear=all style='page-break-before:always'>
 <span lang=ES style='font-size:18.0pt;
 line-height:107%'>Índice
 
-[Iniciar sesión](#1)
+1. [Iniciar sesión](#iniciar-sesión)
+2. [Insertar, modificar y eliminar elementos](#insertar-modificar-y-eliminar-elementos)
+    - [Insertar un nuevo producto](#insertar-un-nuevo-producto)
+    - [Modificar un producto ya existente](#modificar-un-producto-ya-existente)
+    - [Eliminar un producto](#eliminar-un-producto)
+    - [Insertar un nuevo proveedor](#insertar-un-nuevo-proveedor)
+    - [Modificar un proveedor ya existente](#modificar-un-proveedor-ya-existente)
+    - [Insertar una línea de productos](#insertar-una-línea-de-productos)
+    - [Modificar una línea de productos ya existente](#modificar-una-línea-de-productos-ya-existente)
+    - [Insertar un nuevo cliente](#insertar-un-nuevo-cliente)
+    - [Modificar un cliente ya existente](#modificar-un-cliente-ya-existente)
+    - [Insertar un nuevo empleado (sin asignar usuario)](#insertar-un-nuevo-empleado-sin-asignar-usuario)
+    - [Insertar un nuevo empleado (asignando usuario)](#insertar-un-nuevo-empleado-asignando-usuario)
+    - [Modificar un empleado ya existente (con usuario asignado)](#modificar-un-empleado-ya-existente-con-usuario-asignado)
+    - [Modificar un empleado ya existente (sin usuario asignado)](#modificar-un-empleado-ya-existente-sin-usuario-asignado)
+    - [Crear un nuevo pedido](#crear-un-nuevo-pedido)
+        - [Añadir y eliminar productos del carrito de compra](#añadir-y-eliminar-productos-del-carrito-de-compra)
+    - [Consultar pedidos realizados](#consultar-pedidos-realizados)
+        - [Exportar facturas de un pedido a formato PDF](#exportar-facturas-de-un-pedido-a-formato-pdf)
 
-[Insertar, modificar y eliminar elementos](#_Toc136809452)
 
-[Insertar un nuevo producto](#2)
-
-[Modificar un producto ya existente](#3)
-
-[Eliminar un producto](#4)
-
-[Insertar un nuevo proveedor](#5)
-
-[Modificar un proveedor ya existente](#6)
-
-[Insertar una línea de productos](#7)
-
-[Modificar una línea de productos ya existente](#8)
-
-[Insertar un nuevo cliente](#9)
-
-[Modificar un cliente ya existente](#10)
-
-[Insertar un nuevo
-empleado (sin asignar usuario)](#11)
-
-[Insertar un nuevo
-empleado (asignando usuario)](#12)
-
-[Modificar un empleado
-ya existente (con usuario asignado)](#13)
-
-[Modificar un empleado
-ya existente (sin usuario asignado)](#14)
-
-[Crear un nuevo pedido](#15)
-
-[Añadir y eliminar
-productos del carrito de compra](#16)
-
-[Consultar pedidos realizados](#17)
-
-[Exportar facturas de un pedido a formato PDF](#18)
 
 
  &nbsp;
 
-## [Iniciar sesión](#1)
+## [Iniciar sesión]
 
 Se debe introducir las credenciales
 proporcionadas por un administrador.
@@ -77,7 +56,7 @@ proporcionadas por un administrador.
 <img width=445 height=316 id="Imagen 298684095"
 src="README_imgs/image001.jpg">
 
-## [Insertar, modificar y eliminar elementos](#2)
+## [Insertar, modificar y eliminar elementos]
 
 En esta aplicación, teniendo el privilegio de
 usuario podrás consultar las tablas de productos, proveedores, líneas de
@@ -131,18 +110,18 @@ dirección válida, por ejemplo: “www.example.es”.
 <img width=468 height=328 id="Imagen 766902763"
 src="README_imgs/image003.jpg">
 
-### [Insertar un nuevo producto](#3)
+### [Insertar un nuevo producto]
 
 <img width=231 height=271 id="Imagen 921673344"
 src="README_imgs/image004.png" alt="Title: Insertando imagen...">
 
-### [Modificar un producto ya existente](#4)
+### [Modificar un producto ya existente]
 
 <img width=229 height=271
 id="Imagen 1084753437" src="README_imgs/image005.png"
 alt="Title: Insertando imagen...">
 
-### [Eliminar un producto](#5)
+### [Eliminar un producto]
 
 Cada vez que quieras eliminar un elemento, en
 este caso un producto, siempre pedirá una confirmación.
@@ -150,17 +129,17 @@ este caso un producto, siempre pedirá una confirmación.
 <img width=457 height=324 id="Imagen 420178300"
 src="README_imgs/image006.png" alt="Title: Insertando imagen...">
 
-### [Insertar un nuevo proveedor](#6)
+### [Insertar un nuevo proveedor]
 
 <img width=260 height=311 id="Imagen 272618713"
 src="README_imgs/image007.jpg">
 
-### [Modificar un proveedor ya existente](#7)
+### [Modificar un proveedor ya existente]
 
 <img width=228 height=310 id="Imagen 355778820"
 src="README_imgs/image008.png" alt="Title: Insertando imagen...">
 
-### [Insertar una línea de productos](#8)
+### [Insertar una línea de productos]
 
 <img width=223 height=236
 id="Imagen 2019521721" src="README_imgs/image009.png"
@@ -172,39 +151,39 @@ existente](null)
 <img width=226 height=239 id="Imagen 742375282"
 src="README_imgs/image010.png" alt="Title: Insertando imagen...">
 
-### [Insertar un nuevo cliente](#9)
+### [Insertar un nuevo cliente]
 
 <img width=230 height=310 id="Imagen 686170707"
 src="README_imgs/image011.png" alt="Title: Insertando imagen...">
 
-### [Modificar un cliente ya existente](#10)
+### [Modificar un cliente ya existente]
 
 <img width=228 height=307 id="Imagen 35257168"
 src="README_imgs/image012.png" alt="Title: Insertando imagen...">
 
-### [Insertar un nuevo empleado (sin asignar usuario)](#11)
+### [Insertar un nuevo empleado (sin asignar usuario)]
 
 <img width=215 height=373 id="Imagen 660388416"
 src="README_imgs/image013.png" alt="Title: Insertando imagen...">
 
-### [Insertar un nuevo empleado (asignando usuario)](#12)
+### [Insertar un nuevo empleado (asignando usuario)]
 
 <img width=219 height=374
 id="Imagen 1648889154" src="README_imgs/image014.png"
 alt="Title: Insertando imagen...">
 
-### [Modificar un empleado ya existente (con usuario asignado)](#13)
+### [Modificar un empleado ya existente (con usuario asignado)]
 
 <img width=228 height=393 id="Imagen 209084739"
 src="README_imgs/image015.png" alt="Title: Insertando imagen...">
 
-### [Modificar un empleado ya existente (sin usuario asignado)](#14)
+### [Modificar un empleado ya existente (sin usuario asignado)]
 
 <img width=220 height=377
 id="Imagen 1493841760" src="README_imgs/image016.png"
 alt="Title: Insertando imagen...">
 
-### [Crear un nuevo pedido](#15)
+### [Crear un nuevo pedido]
 
 A la hora de realizar un nuevo pedido vemos la
 siguiente ventana en la que en la parte izquierda podemos ver una lista de los
@@ -216,7 +195,7 @@ de datos abajo a la derecha.
 <img width=415 height=190 id="Imagen 617001476"
 src="README_imgs/image017.png" alt="Title: Insertando imagen...">
 
-#### [Añadir y eliminar productos del carrito de compra](#16)
+#### [Añadir y eliminar productos del carrito de compra]
 
 Para insertar un producto al carrito de compra
 es necesario seleccionar un producto de la lista de productos en venta,
@@ -234,7 +213,7 @@ Una vez ya estén todos los productos
 insertados en la lista del carrito procedemos a seleccionar el cliente
 destinatario y clicamos en el botón de “Insertar pedido”.
 
-### [Consultar pedidos realizados](#17)
+### [Consultar pedidos realizados]
 
 Para consultar un pedido deberemos hacer doble
 clic izquierdo sobre el pedido que se quiera consultar.
@@ -243,7 +222,7 @@ clic izquierdo sobre el pedido que se quiera consultar.
 id="Imagen 1496070775" src="README_imgs/image019.png"
 alt="Title: Insertando imagen...">
 
-#### [Exportar facturas de un pedido a formato PDF](#18)
+#### [Exportar facturas de un pedido a formato PDF]
 
 Si damos al botón que dice “Exportar factura”
 nos aparecerá una ventana emergente para poder seleccionar una ruta de destino
