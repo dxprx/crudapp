@@ -86,7 +86,7 @@ Se debe introducir las credenciales
 proporcionadas por un administrador.
 
 <img width=445 height=316 id="Imagen 298684095"
-src="Manual%20de%20usuario_files/image001.jpg">
+src="README_imgs/image001.jpg">
 
 ## [Insertar, modificar y eliminar
 elementos](null)
@@ -100,7 +100,7 @@ las tablas existentes, aparte de poder insertar nuevos elementos a cada tabla o
 modificar valores de los elementos.
 
 <img width=286 height=44 id="Imagen 963869737"
-src="Manual%20de%20usuario_files/image002.jpg">
+src="README_imgs/image002.jpg">
 
 Para insertar sólo deberemos dar al botón que
 dice “Insertar” y nos aparecerá una nueva ventana para poder añadir un nuevo
@@ -141,12 +141,12 @@ Para los sitios web es necesario introducir una
 dirección válida, por ejemplo: “www.example.es”.
 
 <img width=468 height=328 id="Imagen 766902763"
-src="Manual%20de%20usuario_files/image003.jpg">
+src="README_imgs/image003.jpg">
 
 ### [Insertar un nuevo producto](null)
 
 <img width=231 height=271 id="Imagen 921673344"
-src="Manual%20de%20usuario_files/image004.png" alt="Title: Insertando imagen...">
+src="README_imgs/image004.png" alt="Title: Insertando imagen...">
 
 ### [Modificar un producto ya existente](null)
 
@@ -160,64 +160,64 @@ Cada vez que quieras eliminar un elemento, en
 este caso un producto, siempre pedirá una confirmación.
 
 <img width=457 height=324 id="Imagen 420178300"
-src="Manual%20de%20usuario_files/image006.png" alt="Title: Insertando imagen...">
+src="README_imgs/image006.png" alt="Title: Insertando imagen...">
 
 ### [Insertar un nuevo proveedor](null)
 
 <img width=260 height=311 id="Imagen 272618713"
-src="Manual%20de%20usuario_files/image007.jpg">
+src="README_imgs/image007.jpg">
 
 ### [Modificar un proveedor ya existente](null)
 
 <img width=228 height=310 id="Imagen 355778820"
-src="Manual%20de%20usuario_files/image008.png" alt="Title: Insertando imagen...">
+src="README_imgs/image008.png" alt="Title: Insertando imagen...">
 
 ### [Insertar una línea de productos](null)
 
 <img width=223 height=236
-id="Imagen 2019521721" src="Manual%20de%20usuario_files/image009.png"
+id="Imagen 2019521721" src="README_imgs/image009.png"
 alt="Title: Insertando imagen...">
 
 ### [Modificar una línea de productos ya
 existente](null)
 
 <img width=226 height=239 id="Imagen 742375282"
-src="Manual%20de%20usuario_files/image010.png" alt="Title: Insertando imagen...">
+src="README_imgs/image010.png" alt="Title: Insertando imagen...">
 
 ### [Insertar un nuevo cliente](null)
 
 <img width=230 height=310 id="Imagen 686170707"
-src="Manual%20de%20usuario_files/image011.png" alt="Title: Insertando imagen...">
+src="README_imgs/image011.png" alt="Title: Insertando imagen...">
 
 ### [Modificar un cliente ya existente](null)
 
 <img width=228 height=307 id="Imagen 35257168"
-src="Manual%20de%20usuario_files/image012.png" alt="Title: Insertando imagen...">
+src="README_imgs/image012.png" alt="Title: Insertando imagen...">
 
 ### [Insertar un nuevo empleado (sin
 asignar usuario)](null)
 
 <img width=215 height=373 id="Imagen 660388416"
-src="Manual%20de%20usuario_files/image013.png" alt="Title: Insertando imagen...">
+src="README_imgs/image013.png" alt="Title: Insertando imagen...">
 
 ### [Insertar un nuevo empleado (asignando
 usuario)](null)
 
 <img width=219 height=374
-id="Imagen 1648889154" src="Manual%20de%20usuario_files/image014.png"
+id="Imagen 1648889154" src="README_imgs/image014.png"
 alt="Title: Insertando imagen...">
 
 ### [Modificar un empleado ya existente
 (con usuario asignado)](null)
 
 <img width=228 height=393 id="Imagen 209084739"
-src="Manual%20de%20usuario_files/image015.png" alt="Title: Insertando imagen...">
+src="README_imgs/image015.png" alt="Title: Insertando imagen...">
 
 ### [Modificar un empleado ya existente
 (sin usuario asignado)](null)
 
 <img width=220 height=377
-id="Imagen 1493841760" src="Manual%20de%20usuario_files/image016.png"
+id="Imagen 1493841760" src="README_imgs/image016.png"
 alt="Title: Insertando imagen...">
 
 ### [Crear un nuevo pedido](null)
@@ -230,7 +230,7 @@ cuestión, el cual se puede seleccionar de los clientes ya existentes en la base
 de datos abajo a la derecha.
 
 <img width=415 height=190 id="Imagen 617001476"
-src="Manual%20de%20usuario_files/image017.png" alt="Title: Insertando imagen...">
+src="README_imgs/image017.png" alt="Title: Insertando imagen...">
 
 #### [Añadir y eliminar productos del carrito
 de compra](null)
@@ -244,7 +244,7 @@ deberemos seleccionar ese producto de la lista del carrito y dar al botón que
 dice “Eliminar”.
 
 <img width=407 height=187
-id="Imagen 1626758028" src="Manual%20de%20usuario_files/image018.png"
+id="Imagen 1626758028" src="README_imgs/image018.png"
 alt="Title: Insertando imagen...">
 
 Una vez ya estén todos los productos
@@ -257,7 +257,7 @@ Para consultar un pedido deberemos hacer doble
 clic izquierdo sobre el pedido que se quiera consultar.
 
 <img width=429 height=256
-id="Imagen 1496070775" src="Manual%20de%20usuario_files/image019.png"
+id="Imagen 1496070775" src="README_imgs/image019.png"
 alt="Title: Insertando imagen...">
 
 #### [Exportar facturas de un pedido a
@@ -268,12 +268,12 @@ nos aparecerá una ventana emergente para poder seleccionar una ruta de destino
 para nuestra factura en formato PDF.
 
 <img width=432 height=256
-id="Imagen 1213588389" src="Manual%20de%20usuario_files/image020.jpg">
+id="Imagen 1213588389" src="README_imgs/image020.jpg">
 
 Nos generará un PDF como el que se ve a continuación.
 
 <img width=333 height=472
-id="Imagen 1610373526" src="Manual%20de%20usuario_files/image021.jpg">
+id="Imagen 1610373526" src="README_imgs/image021.jpg">
 
 
 
